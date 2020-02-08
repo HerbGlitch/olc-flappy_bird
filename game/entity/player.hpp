@@ -18,5 +18,4 @@ private:
   int y = SCREEN_HEIGHT / 2;
   float vx;
   float vy;
-  float jumping = JUMP_SECONDS;
 };

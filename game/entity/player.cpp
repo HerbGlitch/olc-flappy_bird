@@ -3,16 +3,8 @@
 Player::Player(): color(olc::WHITE){}
 
 void Player::update(float fElapsedTime){
-  if(jumping < JUMP_SECONDS){
-    jumping += fElapsedTime;
-    vx = 0;
-    vy -= GRAVITY*4;
-  }
-  else {
-    jumping = JUMP_SECONDS;
-    vx = 0;
-    vy += GRAVITY;
-  }
+  vx = 0;
+  vy += GRAVITY;
 
   if(vx > PLAYER_VX_MAX){ vx = PLAYER_VX_MAX; }
   if(vy > PLAYER_VY_MAX){ vy = PLAYER_VY_MAX; }
@@ -31,8 +23,7 @@ void Player::reset(){
 }
 
 void Player::mousePress(){
-  jumping = 0;
-  vy = 0;
+  vy = JUMP_VELOCITY;
 }
 
 int Player::getX(){ return x; }
